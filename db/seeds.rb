@@ -12,9 +12,9 @@ require 'faker'
 20.times do
   Item.create(
     title: Faker::Games::Pokemon.name,
-    description: ,
-    price: ,
-    image_url: 
+    description: Faker::TvShows::Kaamelott.quote,
+    price: Faker::Number.decimal(l_digits: 2),
+    image_url: "https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
   )
 
 end
