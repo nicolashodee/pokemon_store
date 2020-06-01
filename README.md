@@ -24,8 +24,13 @@ Things you may want to cover:
 * ...
 
 This is the first edit on the development branch by Nicolas. 
-<<<<<<< Updated upstream
+
 =======
 
 Clement teste heroku pour la 2e fois
->>>>>>> Stashed changes
+
+
+Clement teste heroku
+
+This is the second edit by Nico le fou.
+
