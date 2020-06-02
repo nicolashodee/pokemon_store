@@ -13,31 +13,17 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/61e55c225f.js"></script>
   </head>
 
   <body>
-    
-<header class="header-section">
-  <div class="container-fluid">
-  <div class="inner-header">
-  <div class="header-right">
-    <a href="#">
-      <img src="https://colorlib.com/preview/theme/violet/img/icons/bag.png" alt="">
-    </a>
-  </div>
-  <div class="user-access">
-    <a href="#">Enregistrez-vous</a>
-    <a href="#" class="in">Connexion</a>
-  </div>
-  </div>
-  </nav></div>
 
-</header>
-  
-    <!-- Alertes pour DEVISE-->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <%= render 'layouts/navbar' %>
+  <%= render 'layouts/flash' %>
 
-    <%= yield %>
+  <%= yield %>
+
+  <%= render 'layouts/footer'%>
   </body>
 </html>

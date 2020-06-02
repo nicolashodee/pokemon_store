@@ -1,0 +1,19 @@
+<header class="header-section">
+  <div class="container-fluid">
+    <div class="inner-header">
+      <% if user_signed_in? %>
+        <i class="fa fa-shopping-cart fa-2x mr-3" aria-hidden="true"></i>
+        <span>Vous avez sélectionné <%= current_user.cart.items.count %> item(s).</span>
+      <% end %>
+      <div class="user-access">
+        <% if user_signed_in? %>
+          <%= link_to "Mon panier", cart_path(current_user.cart), :type => "button" %>
+          <%= link_to "Déconnexion", destroy_user_session_path, { method: :delete, :type => "button",  :class => 'in' } %>
+        <% else %>
+          <%= link_to "Enregistrez-vous", new_user_registration_path, :type => "button" %>
+          <%= link_to "Connexion", new_user_session_path, :type => "button",  :class => 'in' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>

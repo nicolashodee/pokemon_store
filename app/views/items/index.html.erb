@@ -1,9 +1,3 @@
-</!DOCTYPE html>
-<html>
-<head>
-  <title>Page Accueil</title>
-</head>
-<body>
 <section class="page-add">
   <div class="container">
     <div class="row">
@@ -12,38 +6,37 @@
           <h2>Pokemons<span>.</span></h2>
           <a href="#">Home</a>
           <a class="active" href="#">Shop</a>
-       </div>
+        </div>
       </div>
-    <div class="col-lg-8">
-      <img src="https://fr.web.img6.acsta.net/newsv7/18/06/25/12/24/2165761.jpg" alt="">
+      <div class="col-lg-8">
+        <img src="https://fr.web.img6.acsta.net/newsv7/18/06/25/12/24/2165761.jpg" alt="">
+      </div>
     </div>
   </div>
-</div>
 </section>
-
-<% if user_signed_in? %>
-  <p><% link_to "Voir mon panier", cart_path(current_user.cart.id), { class: 'primary-btn' } %></p>
-<% end %>
-<% link_to "Ajouter au panier", carts_path(:item_id => item.id), { method: :update, class: 'primary-btn' } %>
-
 
 <div class="container">
   <div class="row">
     <% @items.each do |item| %>
       <div class="col-lg-3 col-md-6">
-          <div class="single-product-item">
-            <figure>
-              <img src="<%= item.image_url %>" class="card-img-top" alt="Card image cap" style="width: 100px; height: 200px;">
-            </figure>
+        <div class="single-product-item">
+          <figure>
+            <img src="<%= item.image_url %>" class="card-img-top" alt="Card image cap" style="width: 100px; height: 200px;">
+          </figure>
           <div class="product-text">
-          <a href="<%= item_path(item.id)%>">
-          <h6><%= item.title %></h6>
-          </a>
-          <p><%= item.price %>€</p>
+            <a href="<%= item_path(item.id)%>">
+              <h6><%= item.title %></h6>
+            </a>
+            <p><%= item.price %>€
+              <% if user_signed_in? %>
+                <%= link_to edit_cart_path(item.id) do %>
+                  <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                <% end %>
+              <% end %>
+            </p>
+          </div>
+        </div>
       </div>
+    <% end %>
   </div>
 </div>
-<% end %>
-
-</body>
-</html>>
