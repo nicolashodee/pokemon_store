@@ -7,14 +7,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-<<<<<<< HEAD
+         
   private
 
   def add_cart
     cart = Cart.create(user: self)
   end
 
-=======
   
   # pour le mailer
   after_create :welcome_send
@@ -22,5 +21,4 @@ class User < ApplicationRecord
     UserMailer.welcome_email(self).deliver_now
   end
   
->>>>>>> action_mailer_nico
 end
