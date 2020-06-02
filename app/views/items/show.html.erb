@@ -1,1 +1,36 @@
-This is a page show
+<section class="page-add">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="page-breadcrumb">
+          <h2>Pokemons<span>.</span></h2>
+          <a href="#">Home</a>
+          <a class="active" href="#">Shop</a>
+       </div>
+      </div>
+    <div class="col-lg-8">
+      <img src="https://fr.web.img6.acsta.net/newsv7/18/06/25/12/24/2165761.jpg" alt="">
+    </div>
+  </div>
+</div>
+</section>
+
+    <div class="row">
+	<section class="product-page" style= "display: flex; flex-flow: row wrap; justify-content: space-around">
+	<div class="col-lg-6">
+		<figure>
+              <img src="<%= @item.image_url %>" class="rounded float-right" alt="Card image cap" style="width: 40%; height: 40%;">
+         </figure>
+	</div>
+	<div class="col-lg-6">
+		<div class="product-content">
+		<h2><%= @item.title %></h2>
+		<div class="pc-meta">
+		<h5><%= @item.price %>€</h5>
+	</div>
+	<p> <%= @item.description %> </p>
+	<a href="#" class="primary-btn pc-btn">Acheter</a>
+	</div>
+	</div>
+	</div>
+</section>
