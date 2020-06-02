@@ -7,10 +7,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         
   private
 
   def add_cart
     cart = Cart.create(user: self)
   end
 
+  
+  # pour le mailer
+  after_create :welcome_send
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+  
 end
