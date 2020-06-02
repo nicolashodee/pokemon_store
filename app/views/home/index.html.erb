@@ -1,0 +1,7 @@
+<h1>Bienvenue sur la boutique pokemon</h1>
+
+<% if user_signed_in? %>
+  <p><%= link_to 'Se Deconnecter' , destroy_user_session_path, method: :delete %></p>
+<% else %>
+  <p><%= link_to 'Se Connecter' , new_user_session_path %></p>
+<% end %>
