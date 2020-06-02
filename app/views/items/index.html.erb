@@ -1,18 +1,43 @@
-<div class="jumbotron">
-  <h1 class="display-4">Pokemon, Attrapez les tous</h1>
-  <p class="lead"></p>
-  <hr class="my-4">
-  <p>La boutique en ligne pour acheter Pikachu</p>
+</!DOCTYPE html>
+<html>
+<head>
+  <title>Page Accueil</title>
+</head>
+<body>
+<section class="page-add">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="page-breadcrumb">
+          <h2>Pokemons<span>.</span></h2>
+          <a href="#">Home</a>
+          <a class="active" href="#">Shop</a>
+       </div>
+      </div>
+    <div class="col-lg-8">
+      <img src="https://fr.web.img6.acsta.net/newsv7/18/06/25/12/24/2165761.jpg" alt="">
+    </div>
+  </div>
 </div>
+</section>
 
-<div class= "row" style= "display: flex; flex-flow: row wrap; justify-content: space-around">
+<div class="container">
+  <div class="row">
     <% @items.each do |item| %>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= item.title %></h5>
-    <p class="card-text"><%= item.price %></p>
-    <a href="<%= item_path(item.id) %>" class="btn btn-outline-primary btn-sm">Plus d'informations</a>
-  </div>
+      <div class="col-lg-3 col-md-6">
+          <div class="single-product-item">
+            <figure>
+              <img src="<%= item.image_url %>" alt="">
+            </figure>
+          <div class="product-text">
+          <a href="#">
+          <h6><%= item.title %></h6>
+          </a>
+          <p><%= item.price %>€</p>
+      </div>
+  </div>  
 </div>
-    <% end %>
-  </div>
+<% end %>
+
+</body>
+</html>>
