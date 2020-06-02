@@ -1,10 +1,12 @@
 class Item < ApplicationRecord
   has_many :join_table_item_cart
   has_many :carts, through: :join_table_item_cart
+  has_many :join_table_order_item
+  has_many :orders, through: :join_table_order_item
 
   validates :title,
     presence: true,
-    length: {in: 5..40}
+    length: {in: 3..40}
   validates :description,
     presence: true
   validates :price,
