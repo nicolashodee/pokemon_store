@@ -5,10 +5,9 @@ class OrdersController < ApplicationController
   def new
   end
 
-
   def create
     @cart = current_user.cart
-    @amount = (@cart.total_price).to_i
+    @amount = @cart.price * 100
   end
 
   def show
@@ -21,7 +20,6 @@ class OrdersController < ApplicationController
 
   def destroy_cart
     @cart = Cart.find_by(user: current_user).delete
-    #je suis pas sûre que ça fonctionne, je trouve pas comment le vérifier dans la console
     Cart.create(user_id: current_user.id)
   end
 

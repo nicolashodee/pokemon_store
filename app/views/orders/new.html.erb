@@ -1,0 +1,10 @@
+<%= form_tag orders_path do %>
+  <article>
+    <label>
+      <span>Votre commande est de :<%=@amount%> €</span>
+    </label>
+  </article>
+
+  <%= link_to "Mettre Stripe ici", root_path,  class: "btn"%>
+
+<% end %>
