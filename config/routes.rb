@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :carts, only: [:show, :edit, :update]
   devise_for :users
   get 'home/private'
+  resources :orders
   
 end
