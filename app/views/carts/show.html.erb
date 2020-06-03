@@ -1,6 +1,48 @@
-<%= render 'layouts/header' %>
+<div class="container">
+  <h2 class="text-center mb-5">Mon Pokepanier</h2>
+  
+<% if current_user.cart.items.count===0 %>
+    <div>
+    <p> Votre Panier est vide </p>
+    </div>
+ <% else %>
+  <% current_user.cart.items.each do |item|%>
+   <div class="container-fluid" >
+      <div class ="row ">
+        <div class= "col-lg-6">
+          <img src="<%= item.image_url %>" class="card-img-top" alt="Card image cap" style="width: 20%;">
+		    </div>
+        <div class= "col-lg-2">
+		     <p>Quantité: </p>
+        </div>
+        <div class= "col-lg-2">
+		      <%= item.title %>
+        </div>
+        <div class = "col-lg-2">
+		      <%= item.price %>
+        </div>
+		   
+      </div>
+    </div>
+		
+	<% end %>
+ <%end%>
 
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+  <div class= "row mt-4">
+    <div class="col-lg-6 text-right">
+      <p> Nombre d'article :</p>
+    </div>
+    <div class="col-lg-2">
+      <%= current_user.cart.items.count %>
+    </div>
+     <div class="col-lg-2">
+      <h4>Total :</h4>
+    </div>
+    <div class="col-lg-2">
+      <%= current_user.cart.total_price %>$
+    </div>
+  </div>
+</div>
 
 <%= link_to "Passer la commande", new_order_path(@cart),  class: "btn btn-secondary btn-sm btn-block"%>
+
