@@ -475,7 +475,7 @@ ol {
 -----------------------*/
 
 .header-info {
-	background: #B0BCC2;
+	background: rgba(255, 0, 0, 0.733);
 	overflow: hidden;
 	padding: 10px 45px;
 }
@@ -1767,6 +1767,38 @@ ol {
 }
 
 .checkout-form input[type=text] {
+	width: 100%;
+	border: 0;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #E7EBED;
+	color: #838383;
+	font-size: 12px;
+	font-weight: 500;
+	margin-bottom: 32px;
+}
+
+.checkout-form input[type=password] {
+	width: 100%;
+	border: 0;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #E7EBED;
+	color: #838383;
+	font-size: 12px;
+	font-weight: 500;
+	margin-bottom: 32px;
+}
+
+.checkout-form input[type=date] {
+	width: 100%;
+	border: 0;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #E7EBED;
+	color: #838383;
+	font-size: 12px;
+	font-weight: 500;
+	margin-bottom: 32px;
+}
+.checkout-form input[type=email] {
 	width: 100%;
 	border: 0;
 	padding-bottom: 12px;

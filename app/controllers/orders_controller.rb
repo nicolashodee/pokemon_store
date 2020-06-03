@@ -3,12 +3,13 @@ class OrdersController < ApplicationController
   after_action :destroy_cart, only:[:create]
 
   def new
+    @cart = current_user.cart
+    @amount = @cart.total_price
   end
-
 
   def create
     @cart = current_user.cart
-    @amount = (@cart.total_price).to_i
+    @amount = @cart.total_price
   end
 
   def show
@@ -21,7 +22,6 @@ class OrdersController < ApplicationController
 
   def destroy_cart
     @cart = Cart.find_by(user: current_user).delete
-    #je suis pas sûre que ça fonctionne, je trouve pas comment le vérifier dans la console
     Cart.create(user_id: current_user.id)
   end
 
