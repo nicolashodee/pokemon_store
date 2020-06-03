@@ -1,19 +1,4 @@
-<section class="page-add">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="page-breadcrumb">
-          <h2>Pokemons<span>.</span></h2>
-          <a href="#">Home</a>
-          <a class="active" href="#">Shop</a>
-        </div>
-      </div>
-      <div class="col-lg-8">
-        <img src="https://fr.web.img6.acsta.net/newsv7/18/06/25/12/24/2165761.jpg" alt="">
-      </div>
-    </div>
-  </div>
-</section>
+<%= render 'layouts/header' %>
 
 <div class="container">
   <div class="row">
@@ -28,10 +13,8 @@
               <h6><%= item.title %></h6>
             </a>
             <p><%= item.price %>€
-              <% if user_signed_in? %>
-                <%= link_to edit_cart_path(item.id) do %>
-                  <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                <% end %>
+              <%= link_to edit_cart_path(item.id) do %>
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
               <% end %>
             </p>
           </div>
