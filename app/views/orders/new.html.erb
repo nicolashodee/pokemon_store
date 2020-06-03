@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page de <%= @user.first_name %> <%= @user.last_name %></title>
+</head>
+
+<body>
+
 <!-- Header Info Begin -->
     <div class="header-info">
         <div class="container-fluid">
@@ -19,133 +30,61 @@
     <form action="#" class="checkout-form">
       <div class="row">
         <div class="col-lg-12">
-          <h3>Adresse de livraison</h3>
+          <h3>Détail de la livraison</h3>
         </div>
-        <div class="col-lg-9">
-          <div class="row">
-            <div class="col-lg-2">
-              <p class="in-name">Name*</p>
-            </div>
-            <div class="col-lg-5">
-              <input type="text" placeholder="First Name">
-            </div>
-            <div class="col-lg-5">
-              <input type="text" placeholder="Last Name">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-2">
-              <p class="in-name">Street Address*</p>
-            </div>
-            <div class="col-lg-10">
-              <input type="text">
-              <input type="text">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-2">
-              <p class="in-name">Country*</p>
-            </div>
-            <div class="col-lg-10">
-              <select class="cart-select country-usa" style="display: none;">
-                <option>USA</option>
-              </select>
-              <div class="nice-select cart-select country-usa" tabindex="0"><span class="current">USA</span>
-                <ul class="list">
-                  <li data-value="USA" class="option selected">USA</li>
-                </ul>
+        <div class="col-lg-6">
+                  <div class="product-content">
+                      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+                      <div class="pc-meta">
+                        <h5>Age : fonction a definir demain</h5>
+                      </div>
+                      <p>Description : <%= @user.description %></p>
+                      <ul class="tags">
+                          <li><span>email : <%= @user.email %></li>
+                          <li><span>Date de naissance :</span> <%= @user.dob %></li>
+                          <li><span>Adresse :</span> <%= @user.address %></li>
+                          <li><span>Code postal :</span> <%= @user.postcode %></li>
+                      </ul>
+                      <ul class="p-info">
+                          <li><%= link_to "Modifier ces informations", edit_user_registration_path, { :type => "button",  :class => 'btn-outline-secondary' } %></li>
+                      </ul>
+                  </div>
               </div>
+        <div class="col-lg-3">
+          <div class="order-table">
+            <div class="cart-item">
+              <span>Product</span>
+              <p class="product-name">Blue Dotted Shirt</p>
+            </div>
+            <div class="cart-item">
+              <span>Price</span>
+              <p>$29</p>
+            </div>
+            <div class="cart-item">
+              <span>Quantity</span>
+              <p>1</p>
+            </div>
+            <div class="cart-item">
+              <span>Shipping</span>
+              <p>$10</p>
+            </div>
+            <div class="cart-total">
+              <span>Total</span>
+              <p>$39</p>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-2">
-              <p class="in-name">City*</p>
-            </div>
-            <div class="col-lg-10">
-              <input type="text">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-2">
-              <p class="in-name">Country</p>
-            </div>
-            <div class="col-lg-10">
-              <input type="text">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-2">
-              <p class="in-name">Post Code/ZIP*</p>
-            </div>
-            <div class="col-lg-10">
-              <input type="text">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-2">
-              <p class="in-name">Phone*</p>
-            </div>
-            <div class="col-lg-10">
-              <input type="text">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12 text-right">
-              <div class="diff-addr">
-                <input type="radio" id="one">
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="payment-method">
+            <h3>Récapitulatif de la commande</h3>
+              
+            <button type="submit">Mettre Stripe ici</button>
           </div>
         </div>
       </div>
     </form>
-
-    <div class="row">
-      <div class="col-lg-12">
-        <h3>Récapitulatif de la commande</h3>
-      </div>
-      <% if current_user.cart.items.count===0 %>
-      <div>
-        <p> Votre Panier est vide </p>
-      </div>
-      <% else %>
-      <% current_user.cart.items.each do |item|%>
-      <div class="container-fluid">
-        <div class="row ">
-          <div class="col-lg-6">
-            <img src="<%= item.image_url %>" class="card-img-top" alt="Card image cap" style="width: 20%;">
-          </div>
-          <div class="col-lg-2">
-            <p>Quantité: </p>
-          </div>
-          <div class="col-lg-2">
-            <%= item.title %>
-          </div>
-          <div class="col-lg-2">
-            <%= item.price %>
-          </div> 
-        </div>
-      </div>
-
-      <% end %>
-      <% end %>
-
-      <div class="row mt-4">
-        <div class="col-lg-6 text-right">
-          <p> Nombre d'article :</p>
-        </div>
-        <div class="col-lg-2">
-          <%= current_user.cart.items.count %>
-        </div>
-        <div class="col-lg-2">
-          <h4>Total :</h4>
-        </div>
-        <div class="col-lg-2">
-          <%= current_user.cart.total_price %>$
-        </div>
-      </div>
-    </div>
-    </div>
   </div>
 </section>
 
@@ -162,3 +101,5 @@
   <%= link_to "Mettre Stripe ici", root_path,  class: "btn"%>
 
 <% end %>
+
+</body>
