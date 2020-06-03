@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Item.destroy_all
+User.destroy_all
 
 require 'faker'
 
@@ -17,6 +18,6 @@ require 'faker'
     price: Faker::Number.decimal(l_digits: 2),
     image_url: 'https://img.pokemondb.net/artwork/large/' + pokemon.downcase + '.jpg'
   )
-
 end
 
+User.create(email: 'admin@pokemon-store.com', password: 'azerty', password_confirmation: 'azerty', is_admin: true)
