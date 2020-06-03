@@ -1,46 +1,99 @@
+<%= render 'layouts/header'%>
+
 <div class="container">
   <h2 class="text-center mb-5">Mon Pokepanier</h2>
-  
-<% if current_user.cart.items.count===0 %>
-    <div>
-    <p> Votre Panier est vide </p>
-    </div>
- <% else %>
-  <% current_user.cart.items.each do |item|%>
-   <div class="container-fluid" >
-      <div class ="row ">
-        <div class= "col-lg-6">
-          <img src="<%= item.image_url %>" class="card-img-top" alt="Card image cap" style="width: 20%;">
-		    </div>
-        <div class= "col-lg-2">
-		     <p>Quantité: </p>
-        </div>
-        <div class= "col-lg-2">
-		      <%= item.title %>
-        </div>
-        <div class = "col-lg-2">
-		      <%= item.price %>
-        </div>
-		   
-      </div>
-    </div>
-		
-	<% end %>
- <%end%>
 
+  <% if current_user.cart.items.count == 0 %>
 
-  <div class= "row mt-4">
+    <div class='row'>
+      <p class= "col-6 offset-3 lead">Votre poképanier est vide :(.</p>
+    </div>
+
+  <% else %>
+
+  <table class="table text-center">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 30%">#</th>
+      <th scope="col" style="width: 40%">Modifications</th>
+      <th scope="col" style="width: 15%">Quantité</th>
+      <th scope="col" style="width: 15%">Prix du lot</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% occurence = 1 %>
+    <% current_user.cart.items.sort.each_with_index do |item, index| %>
+      <% if current_user.cart.items.sort[index + 1] && item == current_user.cart.items.sort[index + 1] %>
+        <% occurence += 1 %>
+        <% next %>
+      <% else %>
+        <tr>
+          <td class="align-middle"><img src="<%= item.image_url %>" class="card-img-top" alt="Card image cap" style="width: 40%;"></td>
+          <td class="align-middle">
+
+            <%= link_to 'Retirer du panier', cart_path(item_id: item.id), method: :delete, data: { confirm: 'Êtes-vous certain(e) ?' }, class: 'btn btn-sm btn-danger' %>
+
+            <%= form_tag({controller: "carts", action: "edit"}, method: "get") do %>
+            <div id='<%= item.id %>'>
+              <div class="product-content pt-3">
+                <div class="pc-meta mb-0">
+                  <div class="product-quantity align-middle">
+                    <div class="pro-qty" style='height: 40px; width: 110px'>
+                      <span class="dec qtybtn" id="minus <%= item.id %>">-</span>
+                        <%= text_field_tag 'number_item', occurence, min: 1, class: 'input', style: 'height: 38px;' %>
+                      <span class="inc qtybtn" id="plus <%= item.id %>">+</span>
+                    </div>
+                  </div>
+                  <%= hidden_field_tag(:item_id, item.id) %>
+                  <%= button_tag "Modifier", type: :submit, :class => 'btn primary-btn pc-btn align-middle', style: 'font-size: 16px; height: 42px; padding: 0px 10px;' %>
+                </div>
+              </div>
+              </div>
+            <% end %>
+
+          </td>
+          <td class="align-middle"><%= occurence %></td>
+          <% occurence = 1 %>
+          <td class="align-middle"><%= item.price %>€</td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+  </table>
+
+  <% end %>
+
+  <hr>
+
+  <div class= "row mt-5">
     <div class="col-lg-6 text-right">
       <p> Nombre d'article :</p>
     </div>
     <div class="col-lg-2">
       <%= current_user.cart.items.count %>
     </div>
-     <div class="col-lg-2">
+    <div class="col-lg-2">
       <h4>Total :</h4>
     </div>
     <div class="col-lg-2">
-      <%= current_user.cart.total_price %>$
+      <%= current_user.cart.total_price %>€
     </div>
   </div>
+
 </div>
+
+<script>
+  <% current_user.cart.items.each do |item| %>
+    {
+      let input = document.getElementById('<%= item.id %>').getElementsByTagName('input')[0];
+      document.getElementById('plus <%= item.id %>').onclick = function(){
+        input.value = parseInt(input.value, 10) + 1;
+      }
+      document.getElementById('minus <%= item.id %>').onclick = function(){
+        if (input.value > 1) {
+          input.value = parseInt(input.value, 10) - 1;
+        }
+      }
+    }
+  <% end %>
+</script>
