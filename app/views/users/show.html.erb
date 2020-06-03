@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page de <%= @user.first_name %> <%= @user.last_name %></title>
+</head>
+
+<body>
+   
+  <!-- Header Info Begin -->
+  <div class="header-info">
+    <div class="container-fluid">
+      <div class="row">   
+        <div class="col-md-12 text-left text-lg-center">
+          <div class="header-item">
+            <img src="img/icons/voucher.png" alt="">
+            <p>&#127752; Le saviez vous ? Pokémon est une contraction de "Pocket Monsters", le nom original de la franchise au Japon.</p>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+<!-- Header Info End -->
+
+  
+
+  <!-- Profil user -->
+  <section class="product-page">
+      <div class="container">
+            <div class="row my-5">
+
+              <div class="col-lg-6">
+                <%if @user.avatar.attached?%>
+                  <%= image_tag @user.avatar, alt: "avatar", style: "max-height: 400px;", class: "mb-3" %>
+                <%else%>
+                  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+                <%end%>
+
+                <%= form_tag user_avatars_path(@user), multipart: true do %>
+                  <%= file_field_tag :avatar %>
+                  <%= submit_tag "mettre à jour" %>
+                <%end%>
+              </div>
+
+              <div class="col-lg-6">
+                  <div class="product-content">
+                      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+                      <div class="pc-meta">
+                        <h5>Age : fonction a definir demain</h5>
+                      </div>
+                      <p>Description : <%= @user.description %></p>
+                      <ul class="tags">
+                          <li><span>email : <%= @user.email %></li>
+                          <li><span>Date de naissance :</span> <%= @user.dob %></li>
+                          <li><span>Adresse :</span> <%= @user.address %></li>
+                          <li><span>Code postal :</span> <%= @user.postcode %></li>
+                      </ul>
+                      <ul class="p-info">
+                          <li><%= link_to "Modifier ces informations", edit_user_registration_path, { :type => "button",  :class => 'btn-outline-secondary' } %></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- fin du profil user -->
+</body>
+</html>
