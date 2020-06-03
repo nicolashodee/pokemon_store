@@ -475,7 +475,7 @@ ol {
 -----------------------*/
 
 .header-info {
-	background: #B0BCC2;
+	background: rgba(255, 0, 0, 0.733);
 	overflow: hidden;
 	padding: 10px 45px;
 }
