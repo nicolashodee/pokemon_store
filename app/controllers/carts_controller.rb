@@ -8,15 +8,23 @@ class CartsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
-    join_item_cart = JoinTableItemCart.new(item: @item, cart: Cart.find_by(user: current_user))
-    if join_item_cart.save
-      flash[:success] = 'Bravo, tu ajouté un item à ton panier !'
-      redirect_to root_path
+    if params[:number_item]
+      number_item = params[:number_item].to_i
     else
-      flash.now[:error] = "Une erreur s'est produite, tu n'as pas pu mettre cet item dans ton panier..."
-      render 'items#index'
+      number_item = 1
     end
+    @item = Item.find(params[:id])
+    number_item.times do
+      join_item_cart = JoinTableItemCart.new(item: @item, cart: Cart.find_by(user: current_user))
+      if join_item_cart.save
+        next
+      else
+        flash.now[:error] = "Une erreur s'est produite, tu n'as pas pu mettre cet item dans ton panier..."
+        render 'items#index'
+      end
+    end
+    flash[:success] = 'Bravo, tu ajouté un ou plusieurs item(s) à ton panier !'
+    redirect_to root_path
   end
 
   def destroy
