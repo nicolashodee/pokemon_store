@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :items
   end
   get 'home/private'
+  resources :orders
   resources :charges, only: [:new, :create]
 end

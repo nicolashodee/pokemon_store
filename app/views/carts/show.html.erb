@@ -28,7 +28,6 @@
 	<% end %>
  <%end%>
 
-
   <div class= "row mt-4">
     <div class="col-lg-6 text-right">
       <p> Nombre d'article :</p>
@@ -44,3 +43,6 @@
     </div>
   </div>
 </div>
+
+<%= link_to "Passer la commande", new_order_path(@cart),  class: "btn btn-secondary btn-sm btn-block"%>
+
