@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :items
   end
+  resources :users
   get 'home/private'
   resources :orders
   resources :charges, only: [:new, :create]
