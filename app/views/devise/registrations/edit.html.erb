@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-lg-12">
           
-          <h3>Modifiez vos informations <%= resource_name.to_s.humanize %></h3>
+          <h3>Modifiez vos informations, <%= @user.first_name %>.</h3>
         </div>
         <div class="col-lg-12">
           <%= render "devise/shared/error_messages", resource: resource %>
@@ -129,7 +129,7 @@
           </div>
           
           <div class="btn">
-            <%= link_to " Go Back", :back, :class => 'btn btn-outline-secondary'  %>
+            <%= link_to "Retour au profil", :back, :class => 'btn btn-outline-secondary'  %>
           </div>
         </div>
       

@@ -8,7 +8,7 @@
       <div class="user-access">
         <% if user_signed_in? %>
           <%= link_to "Mon panier", cart_path(current_user.cart), :type => "button" %>
-          <%= link_to "Mon profil", edit_user_registration_path, { :type => "button",  :class => 'in' } %>
+          <%= link_to "Mon profil", user_path(current_user), { :type => "button",  :class => 'in' } %>
           <%= link_to "Déconnexion", destroy_user_session_path, { method: :delete, :type => "button",  :class => 'in' } %>
         <% else %>
           <%= link_to "Enregistrez-vous", new_user_registration_path, :type => "button" %>
