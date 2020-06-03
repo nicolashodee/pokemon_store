@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'items#index'
   resources :items
-  resources :carts, only: [:show, :edit, :update]
+  resources :carts
   devise_for :users
   namespace :admin do
     resources :items

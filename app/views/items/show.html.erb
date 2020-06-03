@@ -16,12 +16,12 @@
           </div>
           <p><%= @item.description %></p>
 
-          <%= form_tag({controller: "carts", action: "edit"}, method: "get") do %>
+          <%= form_tag({controller: "carts", action: "create", id: @item.id}, method: "post") do %>
 
             <div class="product-quantity">
               <div class="pro-qty">
                 <span class="dec qtybtn" id="minus">-</span>
-                  <%= text_field_tag 'number_item', 1, min: 1, id: 'input'%>
+                  <%= text_field_tag 'number_item', 1, min: 1, class: 'input'%>
                 <span class="inc qtybtn" id="plus">+</span>
               </div>
             </div>
@@ -37,13 +37,15 @@
 </div>
 
 <script>
-  let input = document.getElementById('input');
-  document.getElementById('plus').onclick = function(){
-    input.value = parseInt(input.value, 10) + 1;
-  }
-  document.getElementById('minus').onclick = function(){
-    if (input.value > 1) {
-      input.value = parseInt(input.value, 10) - 1;
+  let inputs = document.getElementsByClassName('input');
+  for (input of inputs) {
+    document.getElementById('plus').onclick = function(){
+      input.value = parseInt(input.value, 10) + 1;
+    }
+    document.getElementById('minus').onclick = function(){
+      if (input.value > 1) {
+        input.value = parseInt(input.value, 10) - 1;
+      }
     }
   }
 </script>
