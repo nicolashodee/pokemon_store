@@ -1,3 +1,116 @@
+<section class="cart-total-page spad">
+
+
+      
+  <div class="container checkout-form">
+    
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      
+      <div class="row">
+        <div class="col-lg-12">
+          <h3>Inscrivez vous, <small><i>et attrapez les tous !</i></small> &#128034;&#128033;&#128027;&#128025;</h3>
+        </div>
+        <div class="col-lg-12">
+          <%= render "devise/shared/error_messages", resource: resource %>
+        </div>
+        <div class="col-lg-11">
+          <!--First name, last name-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Nom*</p>
+            </div>
+            <div class="col-lg-4">
+              <%= f.text_field :first_name, autofocus: true, placeholder: "Marc" %>
+            </div>
+            <div class="col-lg-4">
+              <%= f.text_field :last_name, autofocus: true, placeholder: "Dutroux" %>
+            </div>
+          </div>
+          <!--EMAIL-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">email*</p>
+            </div>
+            <div class="col-lg-8">
+              <%= f.email_field :email, autofocus: true, placeholder: "viens@parlamonpetit.com" %>
+            </div>
+          </div>
+          <!--Description-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Description</p>
+            </div>
+            <div class="col-lg-8">
+              <%= f.text_field :description, autofocus: true, placeholder: "j'aime les petits pokemons, si tu vois ce que je veux dire" %>
+            </div>
+          </div>
+          <!--Address-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Adresse*</p>
+            </div>
+            <div class="col-lg-8">
+                 <%= f.text_field :address, autofocus: true, placeholder: "dans ta cave" %>
+            </div>
+          </div>
+          <!--Postal code-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Code Postal</p>
+            </div>
+            <div class="col-lg-5">
+              <%= f.text_field :postcode, autofocus: true, placeholder: "appelle la poste" %>
+            </div>
+          </div>
+          <!--Date de naissance-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Date de naissance*</p>
+            </div>
+            <div class="col-lg-7">
+              <%= f.date_field :dob, autofocus: true, placeholder: "26/08/1980"%>
+            </div>
+          </div>
+          <!--Password-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Mot de passe</p>
+            </div>
+            <div class="col-lg-7">
+              <%= f.password_field :password, placeholder: "ton mot de passe" %>
+              <% if @minimum_password_length %>
+                <small>(<%= @minimum_password_length %> characters minimum)</small>
+              <% end %>
+            </div>
+          </div>
+          <!--Password-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">confirmation du mot de passe</p>
+            </div>
+            <div class="col-lg-5">
+              <%= f.password_field :password_confirmation, placeholder: "confirmation du mot de passe" %>
+            </div>
+          </div>
+          <!--bouton-->
+          <div class="row">
+            <div class="col-lg-3">  
+            </div>
+            
+            <div class="btn">
+              <%= f.submit "S'inscrire", :class => 'btn btn-outline-secondary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--end of the form-->
+    <% end %>
+  </div>
+</section>
+
+
+
+<!--
 <div class= "container text-center mt-4 mb-4" style="width: 20rem;" >
   <div class ="card mb-2"> 
     <div class="card-header text-white bg-info">   
@@ -6,6 +119,22 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
+        <div class="field mt-3">
+          <%= f.label :first_name %><br />
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "Prenom" %>
+        </div>
+        <div class="field mt-3">
+          <%= f.label :last_name %><br />
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "Nom" %>
+        </div>
+        <div class="field mt-3">
+          <%= f.label :description %><br />
+          <%= f.text_field :description, autofocus: true, autocomplete: "Description" %>
+        </div>
+        <div class="field mt-3">
+          <%= f.label :dob %><br />
+          <%= f.date_field :dob, autofocus: true, autocomplete: "26/08/1980" %>
+        </div>
         <div class="field mt-3">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -31,3 +160,5 @@
        <%= render "devise/shared/links" %>
   </div>
 </div>
+-->
+
