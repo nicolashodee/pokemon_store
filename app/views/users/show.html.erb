@@ -30,9 +30,20 @@
   <section class="product-page">
       <div class="container">
             <div class="row my-5">
+
               <div class="col-lg-6">
-                      <img src="https://caresteadecouvrir.files.wordpress.com/2013/02/maite.jpg?w=812" alt="photo du profil" style="max-height: 400px;">
+                <%if @user.avatar.attached?%>
+                  <%= image_tag @user.avatar, alt: "avatar", style: "max-height: 400px;", class: "mb-3" %>
+                <%else%>
+                  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+                <%end%>
+
+                <%= form_tag user_avatars_path(@user), multipart: true do %>
+                  <%= file_field_tag :avatar %>
+                  <%= submit_tag "mettre à jour" %>
+                <%end%>
               </div>
+
               <div class="col-lg-6">
                   <div class="product-content">
                       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
