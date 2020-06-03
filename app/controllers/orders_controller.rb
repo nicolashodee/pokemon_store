@@ -3,11 +3,13 @@ class OrdersController < ApplicationController
   after_action :destroy_cart, only:[:create]
 
   def new
+    @cart = current_user.cart
+    @amount = @cart.total_price
   end
 
   def create
     @cart = current_user.cart
-    @amount = @cart.price * 100
+    @amount = @cart.total_price
   end
 
   def show
