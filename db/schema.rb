@@ -44,15 +44,6 @@ ActiveRecord::Schema.define(version: 2020_06_03_151524) do
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
-  create_table "create_items", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.decimal "price"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -95,13 +86,13 @@ ActiveRecord::Schema.define(version: 2020_06_03_151524) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_admin", default: false
     t.string "first_name"
     t.string "last_name"
     t.text "description"
     t.date "dob"
     t.string "address"
     t.string "postcode"
+    t.boolean "is_admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
