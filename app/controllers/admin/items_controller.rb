@@ -20,11 +20,13 @@ class Admin::ItemsController < ApplicationController
   end
 
   def edit
-
+    @item = Item.find(params[:id])
   end
 
   def update
-
+    @item = Item.find(params[:id])
+    @item.update(up_item_params)
+    redirect_to admin_items_path
   end
 
   def destroy
@@ -62,5 +64,9 @@ class Admin::ItemsController < ApplicationController
 
   def item_params
     item_params = params.permit(:title, :description, :price, :image_url)
+  end
+
+  def up_item_params
+    up_item_params = params.require(:item).permit(:title, :description, :price, :image_url)
   end
 end
