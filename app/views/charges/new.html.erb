@@ -28,6 +28,7 @@
       <div class="payment-method">
       <h1>Paiement via Stripe</h1>
       <br></br>
+
       <%= form_tag charges_path do %>
         <article>
           <% if flash[:error].present? %>
@@ -39,11 +40,10 @@
             <h4><%= @amount %> € </h4>
           </label>
         </article>
-  </div>
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-description="Votre commande"
-            data-amount="<%= @amount * 100 %>"
+            data-amount="<%= @amount *100 %>"
             data-currency="eur"
             data-locale="auto"></script>
 
