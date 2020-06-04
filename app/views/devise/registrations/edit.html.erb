@@ -1,20 +1,3 @@
-<!-- Header Info Begin -->
-    <div class="header-info">
-        <div class="container-fluid">
-            <div class="row">
-                
-                <div class="col-md-12 text-left text-lg-center">
-                    <div class="header-item">
-                        <img src="img/icons/voucher.png" alt="">
-                        <p>&#127752; Le saviez vous ? Pokémon est une contraction de "Pocket Monsters", le nom original de la franchise au Japon.</p>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </div>
-<!-- Header Info End -->
-
 <section class="cart-total-page spad my-5">   
   <div class="container checkout-form">
     
@@ -56,7 +39,40 @@
               <p class="in-name">Description</p>
             </div>
             <div class="col-lg-8">
-              <%= f.text_field :description, autofocus: true, placeholder: "j'aime les petits pokemons, si tu vois ce que je veux dire" %>
+              <%= f.text_field :description, autofocus: true, placeholder: "j'aime les petits pokemon, si tu vois ce que je veux dire" %>
+            </div>
+          </div>
+          <!--current password-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Mot de passe actuel*</p>
+            </div>
+            <div class="col-lg-8">
+              <%= f.password_field :current_password, autocomplete: "votre mot de passe actuel",  class: "form-control" %>
+            </div>
+          </div>
+          <!--new password-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Nouveau mot de passe*</p>
+            </div>
+            <div class="col-lg-8">
+              <%= f.password_field :password, autocomplete: "votre nouveau mot de passe", class: "form-control" %>
+              <% if @minimum_password_length %>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  <i>(leave blank if you dont want to change it)</i><br>
+                  <em><%= @minimum_password_length %> characters minimum</em> &#127817;
+                </small>
+              <% end %>
+            </div>
+          </div>
+          <!--new password confirmation-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Confirmation du nouveau mot de passe*</p>
+            </div>
+            <div class="col-lg-8">
+              <%= f.password_field :password_confirmation, autocomplete: "retapez votre nouveau mot de passe", class: "form-control" %>
             </div>
           </div>
           <!--Address-->
@@ -84,27 +100,6 @@
             </div>
             <div class="col-lg-7">
               <%= f.date_field :dob, autofocus: true, placeholder: "26/08/1980"%>
-            </div>
-          </div>
-          <!--Password-->
-          <div class="row">
-            <div class="col-lg-3">
-              <p class="in-name">Mot de passe</p>
-            </div>
-            <div class="col-lg-7">
-              <%= f.password_field :password, placeholder: "ton mot de passe" %>
-              <% if @minimum_password_length %>
-                <small>(<%= @minimum_password_length %> characters minimum)</small>
-              <% end %>
-            </div>
-          </div>
-          <!--Password-->
-          <div class="row">
-            <div class="col-lg-3">
-              <p class="in-name">confirmation du mot de passe</p>
-            </div>
-            <div class="col-lg-5">
-              <%= f.password_field :password_confirmation, placeholder: "confirmation du mot de passe" %>
             </div>
           </div>
           <!--bouton-->

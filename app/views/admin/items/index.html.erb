@@ -1,3 +1,77 @@
-<p>
-  Voilà une page admin !
-</p>
+<%= render 'layouts/header' %>
+
+<div class="d-flex justify-content-center">
+  <div class="box px-5" style='width: 100%; min-width: 800px'>
+
+    <h2 class="text-center display-4 mb-5">Tableau récapitulatif</h2>
+
+    <div class="total-info cart-page mt-5">
+      <div class="total-table cart-table text-center">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" style="width: 25%">Nombre de commandes effectuées</th>
+              <th scope="col" style="width: 25%">Prix moyen</th>
+              <th scope="col" style="width: 25%">Pokémon vendus</th>
+              <th scope="col" style="width: 25%">Recette totale</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="align-middle py-3"><%= Order.all.count %></td>
+              <td class="align-middle py-3"><%= @average_price.round(2) %>€</td>
+              <td class="align-middle py-3"><%= @count %></td>
+              <td class="align-middle py-3 total"><%= @total_sell %>€</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr class='mt-0'>
+      </div>
+    </div>
+
+    <h2 class="text-center display-4 mb-5">Liste des pokémon</h2>
+      <div class='ul-order my-4 text-center'>
+        <%= link_to "Ajouter un pokémon", new_admin_item_path, class: "ul-info" %>
+      </div>
+      <div class="cart-page">
+        <div class="cart-table text-center">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col" style="width: 20%">Pokémon</th>
+                <th scope="col" style="width: 30%">Editer</th>
+                <th scope="col" style="width: 15%">Prix</th>
+                <th scope="col" style="width: 15%">Quantité vendue</th>
+                <th scope="col" style="width: 15%">Recette du lot</th>
+                <th scope="col" style="width: 5%">X</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% Item.all.each do |item| %>
+                <tr>
+                  <td class="align-middle"><img src="<%= item.image_url %>" class="card-img-top" alt="Card image cap" style="width: 40%;"></td>
+                  <td class="align-middle">
+                    <div id='<%= item.id %>'>
+                      <div class="product-content pt-3">
+                        <div class="pc-meta mb-0">
+                          <%= link_to "Editer", edit_admin_item_path(item.id), :class => 'btn primary-btn pc-btn align-middle', style: 'font-size: 16px; padding: 0px 10px;' %>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="align-middle"><%= item.price %>€</td>
+                  <td class="align-middle"><%= item.orders.count %></td>
+                  <td class="align-middle total"><%= item.price * item.orders.count %>€</td>
+                  <td class="align-middle">
+                    <%= link_to 'X', admin_item_path(item.id), method: :delete, data: { confirm: 'Êtes-vous certain(e) de supprimer ce pokémon du site ?' }, class: "product-close" %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+  </div>
+</div>

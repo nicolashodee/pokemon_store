@@ -1,0 +1,31 @@
+<section class='cart-total-page spad my-5'>   
+  <div class='container checkout-form'>
+    <h3>Modifier ce Pokémon</h3>
+
+    <%= form_for(@item, url: admin_item_path(@item)) do |f| %>
+      <div class='form-group'>
+        <%= f.label :title, 'Titre' %><br />
+        <%= f.text_field :title, class: 'form-control' , required: true, autocomplete: 'title' %>
+      </div>
+      <div class='form-group'>
+        <%= f.label :description %><br />
+        <%= f.text_field :description, class: 'form-control', required: true, autocomplete: 'description'%>
+      </div>
+      <div class='form-group'>
+        <%= f.label :price, 'Prix' %><br />
+        <%= f.number_field :price, class: 'form-control',required: true %>
+      </div>
+      <div class='form-group'>
+        <%= f.label :image_url, 'Url de l\'image' %><br />
+        <%= f.text_field :image_url, class: 'form-control',required: true, autocomplete: 'image_url' %>
+      </div>
+      <div class='actions mt-5 ul-order text-center'>
+        <%= submit_tag 'Enregistrer les modifications', class: 'ul-info' %>
+      </div>
+    <% end %>
+
+    <div class='ul-order my-4 text-center'>
+      <%= link_to 'Liste des Pokémon', admin_items_path, class: 'ul-info'%>
+    </div>
+  </div>
+</section>

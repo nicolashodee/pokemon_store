@@ -1,0 +1,31 @@
+<section class="cart-total-page spad my-5">   
+  <div class="container checkout-form">
+    <h3>Ajouter un nouveau Pokémon <i>(money, money, money)</i></h3>
+    
+    <%= form_tag admin_items_path, multipart: true do %>
+      <div class="form-group">
+        <%= label_tag :titre %>
+        <%= text_field_tag :title, nil, class: 'form-control', required: true, placeholder: 'Minidraco' %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :description %>
+        <%= text_area_tag :description, nil, class: 'form-control', required: true, placeholder: 'C\'est le meilleur de tous les Pokémon !' %>
+      </div>
+      <br />
+      <div class="form-group">
+        <%= label_tag :prix%>
+        <%= number_field_tag :price, nil, class: 'form-control',required: true, placeholder: 'Entre 0 et 1000 €' %>
+      </div>
+      <br />
+      <div class="form-group">
+        <%= label_tag :url_image %>
+        <%= text_field_tag :image_url, nil, class: 'form-control', required: true, placeholder: 'Mettre un url tant que Active Storage n\'est pas activé' %>
+      </div>
+      <br />
+      <div class="actions mt-5 ul-order">
+      <%= submit_tag "Enregistrer", class: 'ul-info' %>
+      </div>
+      <br />
+    <% end %>
+  </div>
+</section>
