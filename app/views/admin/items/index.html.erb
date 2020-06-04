@@ -20,7 +20,7 @@
           <tbody>
             <tr>
               <td class="align-middle py-3"><%= Order.all.count %></td>
-              <td class="align-middle py-3"><%= @average_price %></td>
+              <td class="align-middle py-3"><%= @average_price.round(2) %>€</td>
               <td class="align-middle py-3"><%= @count %></td>
               <td class="align-middle py-3 total"><%= @total_sell %>€</td>
             </tr>

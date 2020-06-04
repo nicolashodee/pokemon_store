@@ -7,7 +7,7 @@ class Admin::ItemsController < ApplicationController
     if Order.all.size >= 1
       Order.all.each do |order|
         order.items.all.each do |item|
-          @total_sell += order.item.price
+          @total_sell += item.price
           @count += 1
         end
       end
@@ -17,6 +17,14 @@ class Admin::ItemsController < ApplicationController
     else
       @average_price = @total_sell / @count
     end
+  end
+
+  def edit
+
+  end
+
+  def update
+
   end
 
   def destroy
