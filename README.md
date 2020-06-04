@@ -1,6 +1,6 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" align="center"><br>
-<h1 align="center"> POKESTORE <br>
-<small>an ecom website for pokemon hunters !</small></h1> 
+<p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" align="center"></p><br>
+<h1 align="center">POKESTORE</h1><br>
+<h5 align="center"><small><i>an ecom website for pokemon hunters !</i></small></h5> 
 
 <p align="center">
   <a href="https://github.com/frinyvonnick/gitmoji-changelog">
@@ -8,15 +8,15 @@
   </a>
 </p>
 
-→ This project is an ecommerce website running with Ruby on Rails
-→ It is also the Mecca for pokemon lovers, come in large numbers, Make it rain <img src="https://image.flaticon.com/icons/svg/69/69192.svg" width="25" >  !  
+→ This project is an ecommerce website running with Ruby on Rails<br>
+→ It is also the Mecca for pokemon lovers, come in large numbers, Make it rain <img src="https://image.flaticon.com/icons/svg/69/69192.svg" width="25" >  !<br>
 
-→ Link website: https://pokemonstorethpv0.herokuapp.com/
+→ Link: https://pokemonstorethpv0.herokuapp.com/
 
 
 ## 👤  Authors : 
 
-Made with ❤️ by :
+_Made with ❤️ by :_
 
 - Nicolas HODEE → 
 [<img src="http://pngimg.com/uploads/github/github_PNG40.png" width="25" >](https://github.com/nicolashodee)[<img src="https://user-images.githubusercontent.com/59894954/79057092-9281bc00-7c5d-11ea-9392-783b52f9dae4.png" width="25" >](https://www.nicolashodee.com)  [<img src="https://www.crossfitchelles.com/wp-content/uploads/2019/03/linkedin-icon-logo-png-transparent.png" width="25" >  ](https://www.linkedin.com/in/nicolashodee)  [<img src="https://upload.wikimedia.org/wikipedia/commons/4/45/New_Logo_Gmail.svg" width="25" >](contact@nicolashodee.com)   [<img src="https://www.toomed.com/blog/wp-content/uploads/2018/09/new-instagram-logo-png-transparent.png" width="25" > ](https://www.instagram.com/nicolas_hodee_photography)<br> 
@@ -34,7 +34,7 @@ Made with ❤️ by :
 → This project was completed in June 2020 as a part of The Hacking Project Bootcamp teamwork. The goal was to create in 4 days a fully operational ecommerce website, that can display items on sale and receive orders. Items can be purchased if you register with an account. Payments are operated though Stripe. On the admin side, a list of all the orders is available to the seller.  
 
 
-## ✨  What's inside ?
+## ✨ What's inside ?
 
 → This project is running with Ruby on Rails for the back-end side and partly with Bootstrap for the front side. 
 → Features: 
@@ -57,7 +57,7 @@ Made with ❤️ by :
 
 # 🚀 Install
 
-Make sure you have [ruby](https://rvm.io/rvm/install) installed (`npx` is shipped by default since npm `5.2.0`)
+Make sure you have [RVM](https://rvm.io/rvm/install) installed 
 
 Just run the following command in your CLI at the root of your project:
 
