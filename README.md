@@ -22,7 +22,7 @@ _Made with ❤️ by :_
 - Marvin PIERRAT → 
 [<img src="http://pngimg.com/uploads/github/github_PNG40.png" width="25" >](https://github.com/Homarv)<br>
 
-## :calendar:  When ? Where ? Why ?
+## 📅  When ? Where ? Why ?
 
 → This project was completed in June 2020 as part of The Hacking Project online Bootcamp teamwork.<br> **The goal was to create in 4 days a fully operational ecommerce website**, that can display items on sale and receive orders. Items can be purchased if you register with an account. Payments are operated though Stripe. On the admin side, a list of all the orders is available to the seller.  
 
