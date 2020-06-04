@@ -20,11 +20,13 @@ class Admin::ItemsController < ApplicationController
   end
 
   def edit
-
+    @item = Item.find(params[:id])
   end
 
   def update
-
+    @item = Item.find(params[:id])
+    @item.update(up_item_params)
+    redirect_to admin_items_path
   end
 
   def destroy
@@ -39,7 +41,14 @@ class Admin::ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = Item.create(item_params)
+    if @item.save
+      flash[:notice] = "Vous avez créé un nouveau Pokémon"
+      redirect_to admin_items_path
+    else
+      flash.now[:error] = "Une erreur s'est produite, tu n'as pas pu créer ce Pokémon..."
+      redirect_to new_admin_item_path
+    end
   end
 
   private
@@ -54,6 +63,10 @@ class Admin::ItemsController < ApplicationController
   end
 
   def item_params
-    item_params = params.permit(:title, :description, :price, :picture)
+    item_params = params.permit(:title, :description, :price, :image_url)
+  end
+
+  def up_item_params
+    up_item_params = params.require(:item).permit(:title, :description, :price, :image_url)
   end
 end

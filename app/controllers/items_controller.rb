@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = Item.create(item_params)
   end
 
   def index
@@ -18,6 +18,15 @@ class ItemsController < ApplicationController
   def destroy
   	@item = Item.find(params[:id].to_i)
   	@item.destroy
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
   end
 
   private
