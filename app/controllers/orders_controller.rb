@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_user.cart
     @amount = @cart.total_price
+    @user = current_user
   end
 
   def create
