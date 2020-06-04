@@ -1,11 +1,151 @@
-<%= form_tag orders_path do %>
-  <article>
-    <label>
-      <span>Votre commande est de : <%=@amount%> €</span>
-    </label>
-  </article>
+<!DOCTYPE html>
+<html lang="zxx">
 
-<%= link_to "Payer la commande", new_charge_path(@cart),  class: "btn btn-secondary btn-sm btn-block"%>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+<!-- Header Info Begin -->
+  <div class="header-info">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-left text-lg-center">
+          <div class="header-item">
+            <img src="img/icons/voucher.png" alt="">
+            <p>&#127752; Le saviez vous ? Chuck Norris a trouvé tous les Pokémon avec un téléphone fixe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Header Info End -->
+
+  <div class="container">
+    <ul class="ul-order">
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <h3>Détails de la livraison</h3>
+        </div>
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-2">
+              <p class="ul-in-name">Nom :</p>
+            </div>
+            <div class="col-lg-3">
+              <p class="ul-name"><%= @user.first_name %></p>
+            </div>
+            <div class="col-lg-2">
+              <p class="ul-name"><%= @user.last_name %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2">
+              <p class="ul-in-name">Adresse :</p>
+            </div>
+            <div class="col-lg-10">
+              <p class="ul-name"><%= @user.address %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2">
+              <p class="ul-in-name">Code postal :</p>
+            </div>
+            <div class="col-lg-10">
+              <p class="ul-name"><%= @user.postcode %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2">
+              <p class="ul-in-name">Email :</p>
+            </div>
+            <div class="col-lg-10">
+              <p class="ul-name"><%= @user.email %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 my-4 text-center">
+                <%= link_to "Modifier ces informations", edit_user_registration_path, class: "ul-info" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <h3>Récapitulatif de la commande</h3>
+        </div>
+        <div class="col-lg-12">
+          <div class="cart-page">
+            <div class="cart-table text-center">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 25%">Pokémon</th>
+                    <th scope="col" style="width: 25%">Prix</th>
+                    <th scope="col" style="width: 25%">Quantité</th>
+                    <th scope="col" style="width: 25%">Prix du lot</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% occurence = 1 %>
+                  <% @cart.items.sort.each_with_index do |item, index| %>
+                    <% if @cart.items.sort[index + 1] && item == @cart.items.sort[index + 1] %>
+                      <% occurence += 1 %>
+                      <% next %>
+                    <% else %>
+                      <tr>
+                        <td class="align-middle"><img src="<%= item.image_url %>" class="card-img-top" alt="Card image cap" style="width: 40%;"></td>
+                        <td class="align-middle"><%= item.price %>€</td>
+                        <td class="align-middle"><%= occurence %></td>
+                        <td class="align-middle total"><%= item.price * occurence %>€</td>
+                        <% occurence = 1 %>
+                      </tr>
+                    <% end %>
+                    <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <hr class='mb-0'>
+
+          <div class="cart-page">
+            <div class="cart-table text-center">
+              <table>
+                <tbody>
+                  <tr>
+                    <td scope="col" style="width: 25%" class="align-middle py-3"></td>
+                    <td scope="col" style="width: 25%" class="align-middle py-3 font-weight-bold">TOTAL :</td>
+                    <td scope="col" style="width: 25%" class="align-middle py-3"><%= current_user.cart.items.count %></td>
+                    <td scope="col" style="width: 25%" class="align-middle total py-3"><%= current_user.cart.total_price %>€</td>
+                  </tr>
+                </tbody>
+              </table>
+              <hr class='mt-0'>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 my-4 text-center">
+                <%= link_to "Payer la commande", new_charge_path(@cart), class: "ul-info" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </ul>
 
 
-<% end %>
+  </div>
+
+
+
+
+</body>

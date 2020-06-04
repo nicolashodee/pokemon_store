@@ -2394,3 +2394,55 @@ ol {
 		padding: 10px 0;
 	}
 }
+
+.ul-order {
+	padding-bottom: 50px;
+}
+
+.ul-order h3 {
+	color: #1e1e1e;
+	margin-bottom: 15px;
+	padding-bottom: 14px;
+	border-bottom: 2px solid #D0D7DB;
+}
+
+.ul-order .ul-in-name {
+	color: #616060;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: right;
+	margin: 0;
+	margin-top: 18px;
+	padding-bottom: 12px;
+}
+
+.ul-order .ul-name {
+	color: #353535;
+	font-size: 18px;
+	font-weight: 500;
+	text-align: left;
+	margin: 0;
+	margin-top: 14px;
+	padding-bottom: 12px;
+}
+
+.ul-order .ul-info {
+	color: #1e1e1e;
+	background: transparent;
+	border: none;
+	font-weight: 600;
+	width: 100%;
+	padding: 12px 150px;
+	border: 2px solid #727171;
+	border-radius: 50px;
+	cursor: pointer;
+	text-transform: uppercase;
+	margin: 0;
+	margin-top: 25px;
+}
+
+.ul-order .ul-info:hover {
+	background-color: #727171;
+	border: 0;
+	color: white;
+}
