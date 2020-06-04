@@ -2,9 +2,19 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Salut et bienvenue <%= @user.first_name %> <%= @user.last_name %>sur le Pokemon Store !</h1>
+   <header class = "row">
+    <div class="col-lg-10">
+      <h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" style="width: 5%; class="d-inline-block align-top" alt="">
+         <span class="text-muted">Pokestore, <small><i> la boutique </i></small></span> <h2>
+        </a>
+    </div>
+    
+   </header>
+
+    <h1>Salut et bienvenue <%= @user.first_name %> <%= @user.last_name %> sur le Pokemon Store !</h1>
     <p>
       Tu t'es inscrit sur monsite.fr en utilisant l'e-mail suivant : <%= @user.email %>.
     </p>
@@ -12,15 +22,19 @@
       Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
     </p>
     <p> À très vite sur le Pokemon Store !
-    <div class="col-lg-4">
-        <div class="page-breadcrumb">
-          <h2>Pokemons<span>.</span></h2>
-          <a class="active" href="<%= @url %>">Shop</a>
+  
+ <div class = "container">
+      <div class = "row">
+        <div class="col-lg-4">
+            <div class="page-breadcrumb">
+              <h3>Pokemons<span>.<h5>Store</h5></span></h3>
+              
+            </div>
+        </div>
+        <div class="col-lg-8">
+          <img src="https://fr.web.img6.acsta.net/newsv7/18/06/25/12/24/2165761.jpg" alt="" style="width: 80%">
         </div>
       </div>
-      <div class="col-lg-8">
-    <img src="https://fr.web.img6.acsta.net/newsv7/18/06/25/12/24/2165761.jpg" alt="">
-  </body>
-</html>
+    </div>
   </body>
 </html>
