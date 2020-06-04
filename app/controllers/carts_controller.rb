@@ -15,7 +15,7 @@ class CartsController < ApplicationController
       if join_item_cart.save
         next
       else
-        flash.now[:error] = "Une erreur s'est produite, tu n'as pas pu mettre cet item dans ton panier..."
+        flash.now[:error] = "Une erreur s'est produite, tu n'as pas pu mettre ce(s) pokémon dans ton panier..."
         render 'items#index'
       end
     end
@@ -51,7 +51,7 @@ class CartsController < ApplicationController
         join.delete
       end
     end
-    flash[:notice] = "Vous avez retiré un ou plusieurs items de votre panier..."
+    flash[:notice] = "Vous avez retiré un ou plusieurs pokémon de votre panier..."
     redirect_to cart_path(current_user.cart)
   end
 
