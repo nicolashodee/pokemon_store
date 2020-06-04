@@ -19,13 +19,13 @@
         <%= f.label :image_url, 'Url de l\'image' %><br />
         <%= f.text_field :image_url, class: 'form-control',required: true, autocomplete: 'image_url' %>
       </div>
-      <div class='actions mt-5 ul-order'>
+      <div class='actions mt-5 ul-order text-center'>
         <%= submit_tag 'Enregistrer les modifications', class: 'ul-info' %>
       </div>
     <% end %>
 
-    <div class='ul-order my-4'>
-      <%= link_to "Liste des Pokémon", admin_items_path, class: "ul-info" %>
+    <div class='ul-order my-4 text-center'>
+      <%= link_to 'Liste des Pokémon', admin_items_path, class: 'ul-info'%>
     </div>
   </div>
 </section>

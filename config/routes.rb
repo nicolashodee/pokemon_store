@@ -6,9 +6,6 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :admin do
     resources :items
-    resources :items, only: [:new] do
-      resources :pictures, only: [:create]
-    end
   end
   resources :users, :path => "mon_profil"
   get 'home/private'
