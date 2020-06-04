@@ -1,8 +1,15 @@
-# POKESTORE [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" >], the marketplace to find all your pokemons !
+# POKESTORE <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" >, an ecom website for pokemon hunters. 
 
-→ Here is the Mecca for pokemon hunters, come in large numbers, Make it rain!  
-→ Link: 
+<p align="center">
+  <a href="https://github.com/frinyvonnick/gitmoji-changelog">
+    <img src="https://img.shields.io/badge/changelog-gitmoji-brightgreen.svg" alt="gitmoji-changelog">
+  </a>
+</p>
 
+→ This project is an ecommerce website running with Ruby on Rails
+→ It is also the Mecca for pokemon lovers, come in large numbers, Make it rain <img src="https://image.flaticon.com/icons/svg/69/69192.svg" width="25" >  !  
+
+→ Link: (https://pokemonstorethpv0.herokuapp.com/)
 
 
 ## 👤  Authors : 
@@ -20,7 +27,7 @@
 
 ## :calendar:  When ? Where ? Why ?
 
-→ This project was completed in June 2020 as a part of The Hacking Project Bootcamp teamwork. The goal was to create a fully operational ecommerce website, that can display items on sale and receive orders. Items can be purchased if you register with an account. Payments are operated though Stripe. On the admin side, a list of all the orders is available to the seller.  
+→ This project was completed in June 2020 as a part of The Hacking Project Bootcamp teamwork. The goal was to create in 4 days a fully operational ecommerce website, that can display items on sale and receive orders. Items can be purchased if you register with an account. Payments are operated though Stripe. On the admin side, a list of all the orders is available to the seller.  
 
 
 ## :computer:  What's inside ?
@@ -36,7 +43,6 @@
 - Mailer for notifications and orders
 - ...
 ```
-
 # Specs
 
 * Ruby version : 2.5.1
@@ -45,8 +51,7 @@
 
 * Database : PostgreSQL
 
-
-* Deployment instructions
+# Install
 
 If you want to deploy this project on your machine, please execute the following instructions in your CLI / Terminal
   - clone the project to your local directory using git clone
