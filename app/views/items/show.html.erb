@@ -1,38 +1,33 @@
 <%= render 'layouts/header' %>
 
 <div class="d-flex justify-content-center mb-5">
-  <div class="row">
-    <section class="product-page" style= "display: flex; flex-flow: row wrap; justify-content: space-around">
-      <div class="col-lg-6">
-        <figure>
-          <img src="<%= @item.image_url %>" class="rounded float-right" alt="Card image cap" style="width: 40%; height: 40%;">
-        </figure>
+  <div class="card mx-3" style="max-width: 1000px; box-shadow: 0px 0px 5px grey;">
+    <div class="row no-gutters align-items-center">
+      <div class="col-lg-5 p-4 border-right d-flex justify-content-center" style='height: 100%; box-shadow: 0px 0px 1px grey;'>
+        <img src="<%= @item.image_url %>" class="rounded float-right" alt="Pokemon picture">
       </div>
-      <div class="col-lg-6">
-        <div class="product-content">
-          <h2><%= @item.title %></h2>
-          <div class="pc-meta">
-            <h5><%= @item.price %>€</h5>
-          </div>
-          <p><%= @item.description %></p>
+      <div class="col-lg-7 text-center">
+        <div class="card-body">
+          <div class="product-content py-0">
+            <h5 class="card-title font-weight-bold" style='font-size: 45px;'><%= @item.title %></h5>
+            <h5 class="card-title"><%= @item.price %>€</h5>
+            <p class="card-text"><%= @item.description %></p>
 
-          <%= form_tag({controller: "carts", action: "create", id: @item.id}, method: "post") do %>
-
-            <div class="product-quantity">
-              <div class="pro-qty">
-                <span class="dec qtybtn" id="minus">-</span>
+            <%= form_tag({controller: "carts", action: "create", id: @item.id}, method: "post") do %>
+              <div class="product-quantity">
+                <div class="pro-qty">
+                  <span class="dec qtybtn" id="minus">-</span>
                   <%= text_field_tag 'number_item', 1, min: 1, class: 'input'%>
-                <span class="inc qtybtn" id="plus">+</span>
+                  <span class="inc qtybtn" id="plus">+</span>
+                </div>
               </div>
-            </div>
+              <%= submit_tag "Ajouter au panier", :class => 'btn primary-btn pc-btn' %>
+            <% end %>
 
-            <%= submit_tag "Ajouter au panier", :class => 'btn primary-btn pc-btn' %>
-
-          <% end %>
-
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </div>
 
