@@ -1,6 +1,6 @@
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <br>
-<h1 align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" style="font-family: 'Oswald', sans-serif;" > POKESTORE <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" ></h1><br>
+<h1 align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" style="font-family: 'Oswald', sans-serif;" > POKESTORE <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" ></h1>
 <h5 align="center"><small><i>an ecom website for pokemon hunters !</i></small></h5> 
 
 → This project is an ecommerce website running with Ruby on Rails<br>
