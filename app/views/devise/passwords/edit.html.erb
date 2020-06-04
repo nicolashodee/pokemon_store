@@ -1,21 +1,4 @@
-<!-- Header Info Begin -->
-    <div class="header-info">
-        <div class="container-fluid">
-            <div class="row">
-                
-                <div class="col-md-12 text-left text-lg-center">
-                    <div class="header-item">
-                        <img src="img/icons/voucher.png" alt="">
-                        <p>&#127752; Le saviez vous ? Chuck Norris a trouvé tous les Pokemons avec un téléphone fixe.</p>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </div>
-<!-- Header Info End -->
-
-<h2>Change your password</h2>
+<!--<h2>Change your password</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -38,5 +21,56 @@
     <%= f.submit "Change my password" %>
   </div>
 <% end %>
+-->
 
-<%= render "devise/shared/links" %>
+
+
+<section class="cart-total-page spad my-5">   
+  <div class="container checkout-form">
+    
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.hidden_field :reset_password_token %>
+      <div class="row">
+        <div class="col-lg-12">
+          <h3>Changez votre mot de passe</h3>
+        </div>
+        <div class="col-lg-12">
+          <%= render "devise/shared/error_messages", resource: resource %>
+        </div>
+        <div class="col-lg-11">
+          <!--Password-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">Mot de passe</p>
+            </div>
+            <div class="col-lg-7">
+              <%= f.password_field :password, placeholder: "ton mot de passe" %>
+              <% if @minimum_password_length %>
+                <small>(<%= @minimum_password_length %> characters minimum)</small>
+              <% end %>
+            </div>
+          </div>
+          <!--Password-->
+          <div class="row">
+            <div class="col-lg-3">
+              <p class="in-name">confirmation du mot de passe</p>
+            </div>
+            <div class="col-lg-5">
+              <%= f.password_field :password_confirmation, placeholder: "confirmation du mot de passe" %>
+            </div>
+          </div>
+          <!--bouton-->
+          <div class="row">
+            <div class="col-lg-3">  
+            </div>
+            
+            <div class="btn">
+              <%= f.submit "Changer mon mot de passe", :class => 'btn btn-outline-secondary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--end of the form-->
+    <% end %>
+  </div>
+</section>
