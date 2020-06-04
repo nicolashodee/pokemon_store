@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
   def create
     @cart = current_user.cart
     @amount = @cart.total_price
+    @user = current_user
   end
 
   def show

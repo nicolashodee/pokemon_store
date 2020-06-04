@@ -4,80 +4,112 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Page de <%= @user.first_name %> <%= @user.last_name %></title>
 </head>
 
 <body>
 <!-- Header Info Begin -->
-    <div class="header-info">
-        <div class="container-fluid">
-            <div class="row">
-                
-                <div class="col-md-12 text-left text-lg-center">
-                    <div class="header-item">
-                        <img src="img/icons/voucher.png" alt="">
-                        <p>&#127752; Le saviez vous ? Chuck Norris a trouvé tous les Pokémon avec un téléphone fixe.</p>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </div>
-<!-- Header Info End -->
-
-
-<section class="cart-total-page spad my-5">
-  <div class="container">
-    <form action="#" class="checkout-form">
+  <div class="header-info">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-12">
-          <h3>Détail de la livraison</h3>
-        </div>
-        <div class="col-lg-6">
-                  <div class="product-content">
-                      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-                      <div class="pc-meta">
-                        <h5>Age : fonction a definir demain</h5>
-                      </div>
-                      <p>Description : <%= @user.description %></p>
-                      <ul class="tags">
-                          <li><span>email : <%= @user.email %></li>
-                          <li><span>Date de naissance :</span> <%= @user.dob %></li>
-                          <li><span>Adresse :</span> <%= @user.address %></li>
-                          <li><span>Code postal :</span> <%= @user.postcode %></li>
-                      </ul>
-                      <ul class="p-info">
-                          <li><%= link_to "Modifier ces informations", edit_user_registration_path, { :type => "button",  :class => 'btn-outline-secondary' } %></li>
-                      </ul>
-                  </div>
-              </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="payment-method">
-            <h3>Récapitulatif de la commande</h3>
-              
-            <button type="submit">Mettre Stripe ici</button>
+        <div class="col-md-12 text-left text-lg-center">
+          <div class="header-item">
+            <img src="img/icons/voucher.png" alt="">
+            <p>&#127752; Le saviez vous ? Chuck Norris a trouvé tous les Pokémon avec un téléphone fixe.</p>
           </div>
         </div>
       </div>
-    </form>
+    </div>
   </div>
-</section>
+<!-- Header Info End -->
+
+  <div class="container">
+    <ul class="ul-order">
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <h3>Détails de la livraison</h3>
+        </div>
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-2">
+              <p class="ul-in-name">Nom :</p>
+            </div>
+            <div class="col-lg-3">
+              <p class="ul-name"><%= @user.first_name %></p>
+            </div>
+            <div class="col-lg-2">
+              <p class="ul-name"><%= @user.last_name %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2">
+              <p class="ul-in-name">Adresse :</p>
+            </div>
+            <div class="col-lg-10">
+              <p class="ul-name"><%= @user.address %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2">
+              <p class="ul-in-name">Code postal :</p>
+            </div>
+            <div class="col-lg-10">
+              <p class="ul-name"><%= @user.postcode %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2">
+              <p class="ul-in-name">Email :</p>
+            </div>
+            <div class="col-lg-10">
+              <p class="ul-name"><%= @user.email %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 my-4 text-center">
+                <%= link_to "Modifier ces informations", edit_user_registration_path, class: "ul-info" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+            <div class="row">
+        <div class="col-lg-12 my-5">
+          <h3>Récapitulatif de la commande</h3>
+        </div>
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-2">
+              <p class="ul-in-name">Nom :</p>
+            </div>
+            <div class="col-lg-3">
+              <p class="ul-name"><%= @user.first_name %></p>
+            </div>
+            <div class="col-lg-2">
+              <p class="ul-name"><%= @user.last_name %></p>
+            </div>
+          </div>
+
+          
+
+          <div class="row">
+            <div class="col-lg-12 my-4 text-center">
+                <%= link_to "Modifier ces informations", edit_user_registration_path, class: "ul-info" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </ul>
+
+
+  </div>
 
 
 
-
-<%= form_tag orders_path do %>
-  <article>
-    <label>
-      <span>Votre commande est de : <%=@amount%> €</span>
-    </label>
-  </article>
-
-<%= link_to "Payer la commande", new_charge_path(@cart),  class: "btn btn-secondary btn-sm btn-block"%>
-
-
-<% end %>
 
 </body>
