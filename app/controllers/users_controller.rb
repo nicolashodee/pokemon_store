@@ -35,13 +35,13 @@ class UsersController < ApplicationController
   private
   def is_current_user_showing?
     unless current_user.id.to_s == params[:id].to_s
-      flash[:danger] = "Wise guy ! You can't display a profile that is not yours !"
+      flash[:danger] = "Vous ne pouvez pas afficher un profil qui n'est pas le votre !"
       redirect_to user_path(current_user.id)
     end
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :description, :dob, :postode, :address)
+    params.require(:user).permit(:first_name, :last_name, :description, :email, :password, :dob, :postcode, :address)
   end
 
 end
