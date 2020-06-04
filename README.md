@@ -24,7 +24,7 @@ _Made with ❤️ by :_
 
 ## 📅  When ? Where ? Why ?
 
-→ This project was completed in June 2020 as part of The Hacking Project online Bootcamp teamwork.<br> **The goal was to create in 4 days a fully operational ecommerce website**, that can display items on sale and receive orders. Items can be purchased if you register with an account. Payments are operated though Stripe. On the admin side, a list of all the orders is available to the seller.  
+→ This project was completed in June 2020 as part of The Hacking Project online Bootcamp teamwork.<br><br> **The goal was to create in 4 days a fully operational ecommerce website**, that can display items on sale and receive orders. Items can be purchased if you register with an account. Payments are operated though Stripe. On the admin side, a list of all the orders is available to the seller.  
 
 
 ## ✨ What's inside ?
