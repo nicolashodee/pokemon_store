@@ -1,7 +1,5 @@
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<br>
 <h1 align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" style="font-family: 'Oswald', sans-serif;" > POKESTORE <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" ></h1>
-<h5 align="center"><small><i>an ecom website for pokemon hunters !</i></small></h5> 
+<h5 align="center"><small><i>an ecom website for pokemon hunters !</i></small></h5><br> 
 
 → This project is an ecommerce website running with Ruby on Rails<br>
 → It is also the Mecca for pokemon lovers, come in large numbers, Make it rain <img src="https://image.flaticon.com/icons/svg/69/69192.svg" width="25" >  !<br>
@@ -26,7 +24,7 @@ _Made with ❤️ by :_
 
 ## :calendar:  When ? Where ? Why ?
 
-→ This project was completed in June 2020 as a part of The Hacking Project Bootcamp teamwork. The goal was to create in 4 days a fully operational ecommerce website, that can display items on sale and receive orders. Items can be purchased if you register with an account. Payments are operated though Stripe. On the admin side, a list of all the orders is available to the seller.  
+→ This project was completed in June 2020 as part of The Hacking Project online Bootcamp teamwork.<br> **The goal was to create in 4 days a fully operational ecommerce website**, that can display items on sale and receive orders. Items can be purchased if you register with an account. Payments are operated though Stripe. On the admin side, a list of all the orders is available to the seller.  
 
 
 ## ✨ What's inside ?
