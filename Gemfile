@@ -70,3 +70,4 @@ gem 'letter_opener'
 gem 'mailjet'
 gem 'stripe'
 gem 'aws-sdk-s3', require: false
+gem "letter_opener", :group => :development

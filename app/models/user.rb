@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  after_create :welcome_send
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+  
   after_create :add_cart
   has_one :cart
   has_many :orders
