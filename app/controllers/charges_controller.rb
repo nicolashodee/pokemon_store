@@ -1,4 +1,5 @@
 class ChargesController < ApplicationController
+  after_action :destroy_cart, only:[:create]
 
 def new
     @cart = current_user.cart
@@ -33,5 +34,6 @@ private
     @cart = Cart.find_by(user: current_user).delete
     Cart.create(user_id: current_user.id)
   end
+
 
 end

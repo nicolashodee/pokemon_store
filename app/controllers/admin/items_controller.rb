@@ -5,6 +5,14 @@ class Admin::ItemsController < ApplicationController
 
   end
 
+  def new
+    @item = Item.new
+  end
+
+  def create
+    @item = Item.new(item_params)
+  end
+
   private
 
   def check_if_admin
@@ -16,4 +24,7 @@ class Admin::ItemsController < ApplicationController
     end
   end
 
+  def item_params
+    item_params = params.permit(:title, :description, :price, :picture)
+  end
 end
