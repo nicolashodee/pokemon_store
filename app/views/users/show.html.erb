@@ -30,7 +30,7 @@
                   <div class="product-content">
                       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
                       <div class="pc-meta">
-                        <h5>Age : fonction a definir demain</h5>
+                        <h5>Age : <%= @user.calculated_age%> ans.</h5>
                       </div>
                       <p>Description : <%= @user.description %></p>
                       <ul class="tags">

@@ -10,7 +10,7 @@ User.destroy_all
 
 require 'faker'
 
-20.times do
+18.times do
   pokemon = Faker::Games::Pokemon.name
   item = Item.create(
     title: pokemon,
