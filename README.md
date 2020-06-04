@@ -1,7 +1,7 @@
 <h1 align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" style="font-family: 'Oswald', sans-serif;" > POKESTORE <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" ></h1>
 <h5 align="center"><small><i>an ecom website for pokemon hunters !</i></small></h5><br> 
 
-→ This project is an ecommerce website running with Ruby on Rails<br>
+→ **This project is an ecommerce website running with Ruby on Rails**<br>
 → It is also the Mecca for pokemon lovers, come in large numbers, Make it rain <img src="https://image.flaticon.com/icons/svg/69/69192.svg" width="25" >  !<br>
 
 → Link: https://pokemonstorethpv0.herokuapp.com/ <br>
@@ -29,7 +29,7 @@ _Made with ❤️ by :_
 
 ## ✨ What's inside ?
 
-→ This project is running with Ruby on Rails for the back-end side and partly with Bootstrap for the front side. 
+→ This project is running with Ruby on Rails for the back-end side and partly with Bootstrap for the front side.<br> 
 → Features: 
 ```
 - Online store displaying pokemon pictures
