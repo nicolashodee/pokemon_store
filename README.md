@@ -4,7 +4,7 @@
 → This project is an ecommerce website running with Ruby on Rails<br>
 → It is also the Mecca for pokemon lovers, come in large numbers, Make it rain <img src="https://image.flaticon.com/icons/svg/69/69192.svg" width="25" >  !<br>
 
-→ Link: https://pokemonstorethpv0.herokuapp.com/
+→ Link: https://pokemonstorethpv0.herokuapp.com/ <br>
 
 
 ## 👤  Authors : 
