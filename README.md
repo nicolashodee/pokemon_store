@@ -1,12 +1,7 @@
-<p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" align="center"></p><br>
-<h1 align="center">POKESTORE</h1><br>
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<br>
+<h1 align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" style="font-family: 'Oswald', sans-serif;" > POKESTORE <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png" width="50" ></h1><br>
 <h5 align="center"><small><i>an ecom website for pokemon hunters !</i></small></h5> 
-
-<p align="center">
-  <a href="https://github.com/frinyvonnick/gitmoji-changelog">
-    <img src="https://img.shields.io/badge/changelog-gitmoji-brightgreen.svg" alt="gitmoji-changelog">
-  </a>
-</p>
 
 → This project is an ecommerce website running with Ruby on Rails<br>
 → It is also the Mecca for pokemon lovers, come in large numbers, Make it rain <img src="https://image.flaticon.com/icons/svg/69/69192.svg" width="25" >  !<br>
