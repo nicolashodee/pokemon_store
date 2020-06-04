@@ -16,7 +16,7 @@ class UserMailer < ApplicationMailer
   def command_to_admin(user)
     @user = user 
     @url = 'https://pokemonstorethpv0.herokuapp.com/'
-    mail(to: @user.email, subject: 'Une commande a été passé sur le site')
+    mail(to: @user.first, subject: 'Une commande a été passé sur le site')
   end
 end
 
