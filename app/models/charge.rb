@@ -1,12 +1,12 @@
 class Charge < ApplicationRecord
  
  # pour le mailer
- after_initialize :confirmation_command
+ after_create :confirmation_command
  def confirmation_command
    UserMailer.confirmation_command(self).deliver_now
  end
 
- after_initialize :command_to_admin
+ after_create :command_to_admin
  def command_to_admin
    UserMailer.command_to_admin(self).deliver_now
  end
