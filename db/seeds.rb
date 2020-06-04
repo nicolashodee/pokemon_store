@@ -20,4 +20,14 @@ require 'faker'
   )
 end
 
-User.create(email: 'admin@pokemon-store.com', password: 'azerty', password_confirmation: 'azerty', is_admin: true)
+admin = User.create(
+  email: 'admin@pokemon-store.com',
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  is_admin: true,
+  first_name: 'Admin',
+  last_name: 'ADMIN',
+  description: 'Je suis un admin',
+  dob: '28/10/1994',
+  address: 'Devant mon mac',
+  postcode: '33000')
