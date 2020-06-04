@@ -12,6 +12,8 @@ class OrdersController < ApplicationController
     @cart = current_user.cart
     @amount = @cart.total_price
     @user = current_user
+
+    flash[:success] = 'Bravo, tu ajouté un ou plusieurs item(s) à ton panier !'
   end
 
   def show

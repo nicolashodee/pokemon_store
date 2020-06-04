@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_many :carts, through: :join_table_item_cart
   has_many :join_table_order_item
   has_many :orders, through: :join_table_order_item
+  has_one_attached :picture
 
   validates :title,
     presence: true,

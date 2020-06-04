@@ -1,0 +1,22 @@
+<section class="cart-total-page spad my-5">   
+  <div class="container checkout-form">
+    <h3> Salut gros ! Tu veux créer un nouveau pokémon ?</h3>
+    
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+    <%= label_tag 'Titre :' %></br>
+    <%= text_field_tag 'title', nil, placeholder: 'Simpson', maxlength: 14 %>
+    <br /> <br />
+
+    <%= label_tag 'Prix :' %></br>
+    <%= text_area_tag 'price', nil, placeholder: '100.0', maxlength: 14 %>
+    <br /> <br />
+
+    <%= submit_tag "Enregistrer", :class => 'button' %>
+
+    <% end %>
+    <%= simple_form_for @item do |f| %>
+      <%= f.file_field :picture, class: "form-control" %>
+    <% end %>
+  </div>
+</section>
