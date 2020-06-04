@@ -15,7 +15,7 @@ require 'faker'
   item = Item.create(
     title: pokemon,
     description: Faker::TvShows::Simpsons.quote,
-    price: Faker::Number.decimal(l_digits: 2),
+    price: rand(100..1000),
     image_url: 'https://img.pokemondb.net/artwork/large/' + pokemon.downcase + '.jpg'
   )
 end
