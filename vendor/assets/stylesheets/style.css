@@ -2397,13 +2397,13 @@ ol {
 }
 
 .ul-order {
-	padding-bottom: 50px;
+	padding-bottom: 5px;
 }
 
 .ul-order h3 {
 	color: #1e1e1e;
-	margin-bottom: 15px;
-	padding-bottom: 14px;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
 	border-bottom: 2px solid #D0D7DB;
 }
 
@@ -2445,7 +2445,7 @@ ol {
 .ul-order .ul-info:hover {
 	background-color: #727171;
 	border: 0;
-	color: rgba(255, 6, 6, 0.057);
+	color: white;
 }
 
 /* navbar */
