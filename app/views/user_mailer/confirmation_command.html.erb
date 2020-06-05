@@ -4,16 +4,18 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
+
+
   <body>
-   <header class = "row">
+   <header class ="row">
     <div class="col-lg-10">
       <h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png"  class="d-inline-block align-top" alt="" style="width: 5%">
          <span class="text-muted">Pokestore, <small><i> la boutique </i></small></span> <h2>
         </a>
     </div>
     <div class="col-lg-2">
-          <img src="https://fr.web.img6.acsta.net/newsv7/18/06/25/12/24/2165761.jpg" alt="" style="width: 100%">
-        </div>
+          <img src="https://fr.web.img6.acsta.net/newsv7/18/06/25/12/24/2165761.jpg" alt="" style="width: 20%">
+      </div>
    </header>
     <h3> <%= @user.first_name %> <%= @user.last_name %> ta commande a bien été passé sur le Pokemon Store !</h3>
  
@@ -117,10 +119,10 @@
               <table>
                 <tbody>
                   <tr>
-                    <td scope="col" style="width: 25%" class="align-middle py-3"></td>
-                    <td scope="col" style="width: 25%" class="align-middle py-3 font-weight-bold">TOTAL :</td>
-                    <td scope="col" style="width: 25%" class="align-middle py-3"><%= @user.cart.items.count %></td>
-                    <td scope="col" style="width: 25%" class="align-middle total py-3"><%= @user.cart.total_price %>€</td>
+                    <td scope="col-lg col-md col-sm col-xs" style="width: 25%" class="align-middle py-3"></td>
+                    <td scope="col-lg col-md col-sm col-xs" style="width: 25%" class="align-middle py-3 font-weight-bold">TOTAL :</td>
+                    <td scope="col-lg col-md col-sm col-xs" style="width: 25%" class="align-middle py-3"><%= @user.cart.items.count %></td>
+                    <td scope="col-lg col-md col-sm col-xs" style="width: 25%" class="align-middle total py-3"><%= @user.cart.total_price %>€</td>
                   </tr>
                 </tbody>
               </table>
